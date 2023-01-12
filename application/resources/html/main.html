@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Главная</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div class="login">
+      <div class="login__left">
+        <figure class="login__img"><img src="img/login-img.jpg" alt="#"/></figure>
+      </div>
+      <div class="login__right">
+        <div class="login__logo"><a href="#"><img src="img/logo.svg" alt="#"/></a></div>
+        <div class="login__auth">
+          <div class="auth__heading"><span>Войдите в личный кабинет</span></div>
+          <form action="login" method="post">
+            <div class="auth__phone">
+              <input type="phone" placeholder="Введите номер телефона"/>
+            </div>
+            <div class="auth__check">
+              <input type="checkbox" id="cb"/>
+              <label for="cb"><span>Запомнить меня на этом компьютере</span></label>
+            </div>
+            <div class="auth__btn">
+              <button class="default-btn" type="submit">Получить код</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendors.js"></script>
+    <script src="js/base.js"></script>
+  </body>
+</html>

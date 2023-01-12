@@ -20,8 +20,9 @@ current_dir := $(abspath $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_L
 docker-up:
 	docker-compose up -d
 
+#--remove-orphans
 docker-down-clear:
-	docker-compose down -v --remove-orphans
+	docker-compose down -v
 
 docker-pull:
 	docker-compose pull

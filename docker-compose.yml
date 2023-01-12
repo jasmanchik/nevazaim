@@ -15,7 +15,7 @@ services:
             - db
             - nosql
         volumes:
-            - ./:/var/www
+            - ./application:/var/www
             - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
         networks:
             - app-network
@@ -29,7 +29,7 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-            - ./:/var/www
+            - ./application:/var/www
             - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
         networks:
             - app-network
@@ -60,7 +60,7 @@ services:
         restart: always
         ports:
             - "6379:6379"
-        command: redis-server --save 60 1 --requirepass MFDNclV13b924a --loglevel
+        command: redis-server --save 60 1 --requirepass MFDNclV13b924a --loglevel debug
         volumes:
             - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
             - nosql-data:/data
@@ -70,13 +70,15 @@ services:
         restart: always
         links:
             - db
+        depends_on:
+            - db
         ports:
-            - "8081:80"
+            - "8080:80"
         environment:
             PMA_ARBITRARY: 1
             PMA_HOST: db
             PMA_PORT: 3306
-            PMA_USER: user
+            PMA_USER: db_user
             PMA_PASSWORD: root
         networks:
             - app-network

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Главная</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div class="login">
+      <div class="login__left">
+        <figure class="login__img"><img src="img/login-img.jpg" alt="#"/></figure>
+      </div>
+      <div class="login__right">
+        <div class="login__logo"><a href="#"><img src="img/logo.svg" alt="#"/></a></div>
+        <div class="login__auth login__auth--pass">
+          <div class="auth__heading"><span>Введите код</span></div>
+          <div class="auth__desc">
+            <p>Мы отправили код подтверждения на номер +7 777 777-77-77 <a href="#">Изменить</a></p>
+          </div>
+          <form action="login" method="post">
+            <input type="number" length="1"/>
+            <input type="number" length="1"/>
+            <input type="number" length="1"/>
+            <input type="number" length="1"/>
+          </form>
+          <div class="auth__count"><span>Получить новый код можно через 00:56</span></div>
+          <div class="auth__repeat"><a href="#">Получить код повторно</a></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendors.js"></script>
+    <script src="js/base.js"></script>
+  </body>
+</html>
